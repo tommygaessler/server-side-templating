@@ -6,6 +6,8 @@ const indexController = require('../controllers/index');
 router.get('/', function (req, res, next) {
   const renderObject = {};
   renderObject.title = 'Welcome to Express!';
+  renderObject.nameArray = ['Tommy', 'Michael', 'Jeanne', 'Gary'];
+  renderObject.sentance = 'Hello i do not have any spaces';
   indexController.sum(1, 2, (error, results) => {
     if (error) return next(error);
     if (results) {

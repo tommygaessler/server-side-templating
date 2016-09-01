@@ -5,8 +5,21 @@
 {% block content %}
 
   <div class="container">
-    <h1>{{title}}</h1>
+
+    {% if title %}
+
+    <h1>{{title | replace('Express', 'Nunjucks') | upper}}</h1>
+
+    {% endif %}
     <h2>The sum is {{sum}}</h2>
+
+    {% for name in nameArray %}
+      {% if name == "Tommy" %}
+        <p>{{name}}</p>
+      {% endif %}
+    {% endfor %}
+
+    <p>{{sentance | splitString()}}</p>
   </div>
 
 {% endblock %}
